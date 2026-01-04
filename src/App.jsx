@@ -1,6 +1,6 @@
 import "./styles.css";
 import { use, useState } from "react";
-
+import { BadgeDollarSign } from "lucide-react";
 function Header() {
   return (
     <header className="header">
@@ -113,14 +113,20 @@ function Form() {
         <label htmlFor="price" className="title">
           Price
         </label>
-        <input
-          type="number"
-          name="price"
-          value={price}
-          placeholder="0.00"
-          onChange={(e) => setPrice(e.target.value)}
-          className="price"
-        />
+        <div className="relative">
+          <div className="icon">
+            <BadgeDollarSign />
+          </div>
+          <input
+            type="number"
+            name="price"
+            value={price}
+            placeholder="0.00"
+            onChange={(e) => setPrice(e.target.value)}
+            className="price"
+          />
+        </div>
+
         <p className="error">{errors.price}</p>
       </div>
       <div className="gen">

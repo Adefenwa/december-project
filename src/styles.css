@@ -9,14 +9,20 @@
 
 .App {
   font-family: sans-serif;
-  width: 90%;
+  width: 50%;
   margin: 2em auto;
   border: 1px solid rgba(211, 211, 211, 0.5);
   border-radius: 20px;
+  max-width: 500px;
 }
 
 .text {
   color: blue;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .header {
@@ -41,7 +47,7 @@
 .description {
   width: 100%;
   border: 1px solid rgba(211, 211, 211, 0.5);
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   border-radius: 10px;
 }
 .title {
@@ -52,7 +58,7 @@
 .btn-submit {
   background-color: rgb(1, 161, 121);
   width: 100%;
-  padding: 8px 0;
+  padding: 1em 0;
   border-radius: 10px;
   color: #fff;
   font-weight: 700;
@@ -69,4 +75,13 @@
 }
 .gen {
   margin-bottom: 1em;
+}
+
+.relative {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  top: 25%;
+  left: 10px;
 }
