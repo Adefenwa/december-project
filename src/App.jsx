@@ -144,7 +144,7 @@ function Form() {
       <div className="gen">
         <p className="title">Description</p>
         <div className="relative">
-          <div className="icon">
+          <div className="icon desc">
             <NotepadText size={16} stroke="rgb(83, 83, 83)" />
           </div>
           <textarea
