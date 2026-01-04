@@ -1,6 +1,6 @@
 import "./styles.css";
 import { use, useState } from "react";
-import { BadgeDollarSign } from "lucide-react";
+import { BadgeDollarSign, PackageSearch, Tag, NotepadText } from "lucide-react";
 function Header() {
   return (
     <header className="header">
@@ -77,20 +77,26 @@ function Form() {
     <form action="" method="post" className="form" onSubmit={handleSubmit}>
       <div className="gen">
         <p className="title">Category</p>
-        <select
-          name=""
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="dropdown"
-        >
-          <option value="" disabled>
-            Select a category
-          </option>
-          <option value="electronics">Electronics</option>
-          <option value="clothing">Clothing</option>
-          <option value="home">Home & Garden</option>
-          <option value="accessories">Accessories</option>
-        </select>
+        <div className="relative">
+          <div className="icon">
+            <Tag size={16} stroke="rgb(83, 83, 83)" />
+          </div>
+          <select
+            name=""
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="dropdown"
+          >
+            <option value="" disabled>
+              Select a category
+            </option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home & Garden</option>
+            <option value="accessories">Accessories</option>
+          </select>
+        </div>
+
         <p className="error">{errors.category}</p>
       </div>
 
@@ -98,14 +104,20 @@ function Form() {
         <label htmlFor="product-name" className="title">
           Product Name
         </label>
-        <input
-          type="text"
-          name="product-name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Leather wallet"
-          className="product-name"
-        />
+        <div className="relative">
+          <div className="icon">
+            <PackageSearch size={16} stroke="rgb(83, 83, 83)" />
+          </div>
+          <input
+            type="text"
+            name="product-name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Leather wallet"
+            className="product-name"
+          />
+        </div>
+
         {/* {errors.name && <p>{errors.name}</p>} */}
         <p className="error">{errors.name}</p>
       </div>
@@ -115,7 +127,7 @@ function Form() {
         </label>
         <div className="relative">
           <div className="icon">
-            <BadgeDollarSign />
+            <BadgeDollarSign size={16} stroke="rgb(83, 82, 83)" />
           </div>
           <input
             type="number"
@@ -131,13 +143,19 @@ function Form() {
       </div>
       <div className="gen">
         <p className="title">Description</p>
-        <textarea
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Describe your product..."
-          className="description"
-        ></textarea>
+        <div className="relative">
+          <div className="icon">
+            <NotepadText size={16} stroke="rgb(83, 83, 83)" />
+          </div>
+          <textarea
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Describe your product..."
+            className="description"
+          ></textarea>
+        </div>
+
         <p className="error">{errors.description}</p>
       </div>
       <button type="submit" className="btn-submit">
